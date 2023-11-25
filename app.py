@@ -63,6 +63,55 @@ def excluir_termo(termo_id):
     return redirect(url_for('glossario'))
 
 
+@app.route('/novo_termo1')
+def novo_termo1():
+    return render_template('add_termo.html')
+
+
+@app.route('/tarefas')
+def tarefa():
+
+    tarefas_de_termo = []
+
+    with open('bd_tarefa.csv', newline='', encoding='utf-8') as arquivo:
+        reader = csv.reader(arquivo, delimiter=';')
+        for i in reader:
+            tarefas_de_termo.append(i)
+
+    return render_template('tarefas.html', tarefas=tarefas_de_termo)
+
+
+@app.route('/cria_termo', methods=['POST', ])
+def cria_termo():
+    objetivo = request.form['objetivo']
+    tarefas = request.form['tarefas']
+
+    with open('bd_tarefa.csv', 'a', newline='', encoding='utf-8') as arquivo:
+        writer = csv.writer(arquivo, delimiter=';')
+        writer.writerow([objetivo, tarefas])
+
+    return redirect(url_for('tarefa'))
+
+
+@app.route('/exclui_objetivo/<int:objetivo_id>', methods=['POST'])
+def exclui_objetivo(objetivo_id):
+
+    with open('bd_tarefa.csv', 'r',  newline='') as file:
+        reader = csv.reader(file)
+        linhas1 = list(reader)
+
+    for i, linha in enumerate(linhas1):
+        if i == objetivo_id:
+            del linhas1[i]
+            break
+
+    with open('bd_tarefa.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(linhas1)
+
+    return redirect(url_for('tarefa'))
+
+
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
