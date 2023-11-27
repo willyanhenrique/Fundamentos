@@ -29,7 +29,7 @@ def glossario():
 
 @app.route('/novo_termo')
 def novo_termo():
-    return render_template('adicionar_termo.html')
+    return render_template('novo_termo.html')
 
 
 @app.route('/criar_termo', methods=['POST', ])
@@ -65,7 +65,7 @@ def excluir_termo(termo_id):
 
 @app.route('/novo_termo1')
 def novo_termo1():
-    return render_template('add_termo.html')
+    return render_template('nova_tarefa.html')
 
 
 @app.route('/tarefas')

@@ -1,13 +1,30 @@
 {% extends "modelo.html" %}
 {% block conteudo %}
-<h1>tarefas</h1>
+
+<h1>Adicionar Tarefa</h1>
+
+<form action="{{ url_for('cria_termo')}}" method="post">
+  <div class="mb-3">
+    <label for="objetivo" class="form-label">Nomeie a tarefa</label>
+    <input  class="form-control" id="objetivo" name="objetivo" aria-describedby="emailHelp">
+    <div id="termoHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="tarefas" class="form-label">Descreva a tarefa</label>
+    <textarea class="form-control" id="tarefas" name="tarefas" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+<h2>Tarefas</h2>
 
 <table class="table table-striped table-responsive table-bordered">
   <thead class="thead-default">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Termo</th>
-      <th scope="col">Definição</th>
+      <th scope="col">Tarefa</th>
+      <th scope="col">Descrição</th>
       <th scope="col">Ação</th>
     </tr>
   </thead>
