@@ -1,4 +1,36 @@
 {% extends "modelo.html" %}
 {% block conteudo %}
-    <p>integrantes=willyan henrique do nascimento feitosa</p>
+
+<div class="image">
+
+
+  <h3>Rudá Carvalho</h3>
+  <img src="{{ url_for('static', filename='images/fotoruda.jpg') }}" id="img" />
+
+  <h3>Willyan Henrique</h3>
+  <img src="{{ url_for('static', filename='images/fotowyllian.jpg') }}"id="img" />
+
+  <h3>Matheus Ferreira</h3>
+  <img src="{{ url_for('static', filename='images/fotomatheus.jpg') }}" id="img" />
+
+  <h3>Carlos Gabriel</h3>
+  <img src="{{ url_for('static', filename='images/fotogabriel.jpg') }}" id="img" />
+
+</div>
+
+<style>
+
+  .image {
+
+    text-align: center;
+
+  }
+
+  #img {
+  width: 150px;
+  }
+
+</style>
+
+
 {% endblock %}
