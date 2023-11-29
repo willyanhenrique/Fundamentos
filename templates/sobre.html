@@ -1,44 +1,55 @@
 {% extends "modelo.html" %}
 {% block conteudo %}
-<<<<<<< HEAD
 
-<div class="image">
+<div class="space">
+    <div class="img">
+        <img src="{{ url_for('static', filename='images/fotoruda.jpg') }}" id="img" />
+        <div>
+            <h3>Rudá Carvalho</h3>
+            <p>Aluno do 1° período na uniesp. Ainda não sabe qual área seguir, mas já descobriu-se como não simpatizante com toda e qualquer área de design.</p>
 
-
-  <h3>Rudá Carvalho</h3>
-  <img src="{{ url_for('static', filename='images/fotoruda.jpg') }}" id="img" />
-
-  <h3>Willyan Henrique</h3>
-  <img src="{{ url_for('static', filename='images/fotowyllian.jpg') }}"id="img" />
-
-  <h3>Matheus Ferreira</h3>
-  <img src="{{ url_for('static', filename='images/fotomatheus.jpg') }}" id="img" />
-
-  <h3>Carlos Gabriel</h3>
-  <img src="{{ url_for('static', filename='images/fotogabriel.jpg') }}" id="img" />
-
+        </div>
+    </div>
+    <div class="img">
+        <img src="{{ url_for('static', filename='images/fotowyllian.jpg') }}" id="img" />
+        <div>
+            <h3>Willyan Henrique</h3>
+            <p>Aluno do 1° período na uniesp. Ainda não sabe a área que irá seguir, mas está animado pra estagiar. </p>
+        </div>
+    </div>
+    <div class="img1">
+        <img src="{{ url_for('static', filename='images/fotomatheus.jpg') }}" id="img" />
+        <div>
+            <h3>Matheus Ferreira</h3>
+            <p>Aluno do 1° período na uniesp. Estudando TI para manter meu estilo de vida de acordar após 12:00 hrs. </p>
+        </div>
+    </div>
+    <div class="img1">
+        <img src="{{ url_for('static', filename='images/fotogabriel.jpg') }}" id="img" />
+        <div>
+            <h3>Carlos Gabriel</h3>
+            <p>Aluno do 1° período na uniesp. Estudando TI para conseguir pagar meu primeiro rodízio de pizza.</p>
+        </div>
+    </div>
 </div>
-
 <style>
+    .img{
+    display:flex;
+    width: 500px;
 
-  .image {
+    }
 
-    text-align: center;
+    #img{
+    width:150px;
+    }
 
-  }
+    .img1{
+    display:flex;
+    width:500px;
 
-  #img {
-  width: 150px;
-  }
+    #center{
+        text align:center;
+    }
 
 </style>
-
-
-=======
-    <h1>equipe</h1>
-    <p>willyan henrique do nascimento feitosa</p>
-    <p>Carlos Gabriel Azevedo Oliveira</p>
-    <p>Matheus Ferreira de Araújo</p>
-    <p>Ruda Aknaton Cavalcante de Carvalho</p>
->>>>>>> 7fb26d5c6a71781af316885a2de08af2af448d62
 {% endblock %}
